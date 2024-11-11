@@ -1,12 +1,17 @@
 [
   {
-    "name": "Deatharu",
+    "name": "Sakaru",
     "server": "Ragnaros",
     "sin": "Cute"
   },
   {
+    "name": "Kesara",
+    "server": "Emeralddream",
+    "sin": "Cyberbully"
+  },
+  {
     "name": "Fekke",
-    "server": "emeralddream",
-    "sin": "alt f4"
+    "server": "Emeralddream",
+    "sin": "Alt + f4"
   }
 ]

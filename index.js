@@ -48,9 +48,9 @@ function askForSin() {
 
 // Function to add a player
 function addPlayer() {
-  const name = askForName();
-  const server = askForServer();
-  const sin = askForSin();
+  const name = capFirstLetter(askForName());
+  const server = capFirstLetter(askForServer());
+  const sin = capFirstLetter(askForSin());
   const newEntry = { name, server, sin };
   saveToFile(newEntry);
 }
@@ -80,7 +80,7 @@ function viewAllPlayers() {
 
     console.log("Players: ");
     userData.forEach(entry => {
-        console.log(entry.name);
+        console.log(capFirstLetter(entry.name) + " - " + capFirstLetter(entry.server));
     });
 }
 
@@ -110,6 +110,10 @@ function saveToFile(newEntry) {
   // Write the updated data back to the JSON file
   fs.writeFileSync(path, JSON.stringify(userData, null, 2));
   console.log('Player has been added');
+}
+
+function capFirstLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 }
 
 function main() {

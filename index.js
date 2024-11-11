@@ -1,6 +1,7 @@
 const prompt = require('prompt-sync')();
 const fs = require('fs');
 const path = 'userData.json';
+const bannedWords = require('./bannedWords'); //Naughty words
 
 // Function to load existing data from userData.json
 function loadUserData() {
@@ -28,6 +29,14 @@ function askForName() {
   return name;
 }
 
+function censorWords(text) {
+  bannedWords.forEach(word => {
+    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    text = text.replace(regex, 'womp');
+  });
+  return text;
+}
+
 // Server
 function askForServer() {
     let server;
@@ -43,7 +52,8 @@ function askForServer() {
 
 // Function to ask for sin
 function askForSin() {
-  return prompt("What sin did they commit? ");
+  let sin = prompt("What sin did they commit? ");
+  return censorWords(sin);
 }
 
 // Function to add a player

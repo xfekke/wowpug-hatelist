@@ -1,2 +1,0 @@
-# wowpug hatelist
- 

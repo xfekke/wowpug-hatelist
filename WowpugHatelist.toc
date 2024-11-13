@@ -1,0 +1,6 @@
+## Interface: 100007
+## Title: Wowpug Hatelist
+## Notes: An addon to track player names, servers, and offenses.
+## Author: Fekke
+## SavedVariables: WowpugHatelistDB
+WowpugHatelist.lua
